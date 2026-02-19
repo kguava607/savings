@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savings Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1 class="logo">Savings Tracker</h1>
+      <button id="clearAll" class="btn danger" type="button">Clear All</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Add a Paycheck Entry</h2>
+
+      <div class="grid">
+        <label>
+          Entry Type
+          <select id="entryType">
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+        </label>
+
+        <label>
+          Date
+          <input id="date" type="date" />
+        </label>
+
+        <label>
+          Paycheck (after taxes)
+          <input id="income" type="number" inputmode="decimal" placeholder="e.g., 950" />
+        </label>
+
+        <label>
+          Total Bills/Expenses for this period
+          <input id="expenses" type="number" inputmode="decimal" placeholder="e.g., 600" />
+        </label>
+      </div>
+
+      <button id="addEntry" class="btn" type="button">Add Entry</button>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>Summary</h2>
+      <div class="summary">
+        <div class="box">
+          <div class="label">Total Income</div>
+          <div id="totalIncome" class="value">$0.00</div>
+        </div>
+        <div class="box">
+          <div class="label">Total Expenses</div>
+          <div id="totalExpenses" class="value">$0.00</div>
+        </div>
+        <div class="box">
+          <div class="label">Total Saved</div>
+          <div id="totalSaved" class="value">$0.00</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>History</h2>
+      <div id="history" class="history"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
